@@ -9,4 +9,5 @@ for i in os.listdir():
     # print(filename.split(' '))
     title, copy, number = filename.split(' ')
     number = number.zfill(2)
-    print('{}-{}{}'.format(number,title,ext))
+    new = ('{}-{}{}'.format(number,title,ext))
+    os.rename(i, new)

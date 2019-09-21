@@ -7,9 +7,12 @@ import os
 class myFileHandler(FileSystemEventHandler):
     def on_modified(self, event):
         for filename in os.listdir(folder_to_track):
+            if filename == ".jpg":
+                pass
             src = folder_to_track + '/' + filename
             new_destination = folder_destination + '/' + filename
             os.rename(src, new_destination)
+            
 
 folder_to_track = '/Users/nielspace/Desktop/empty'
 folder_destination = '/Users/nielspace/Desktop/test'
